@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Anniversary Mummy & Papa</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #fde2e4, #fadadd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+  }
+
+  .card {
+    background: white;
+    width: 340px;
+    padding: 30px 22px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  h1 {
+    color: #c9184a;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .quote {
+    margin: 18px 0;
+    font-style: italic;
+    color: #9d0208;
+  }
+
+  .from {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff4d6d;
+    animation: hearts 6s linear infinite;
+  }
+
+  @keyframes hearts {
+    0% {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Happy Anniversary</h1>
+  <h2>Mummy & Papa ❤️</h2>
+
+  <p>
+    Your love is the heart of our family and the reason we believe in forever.
+  </p>
+
+  <div class="quote">
+    “A beautiful marriage is built on love, patience, and choosing each other every day.”
+  </div>
+
+  <p>
+    Wishing you many more years of happiness, health, and togetherness.
+  </p>
+
+  <div class="from">
+    With all my love 💕
+  </div>
+</div>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
